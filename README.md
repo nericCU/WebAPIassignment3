@@ -12,17 +12,24 @@ Requirements
 
 
 • Create two proxies on Apigee, one to accept the request that is routed to Github and another to create and revoke OAuth licenses.
+
    – The primary proxy should only accept GET requests.
+
    – The proxy should have two different URNs that only accept a given authorization credential.
-      * /oauth should only accept OAuth Authorization access tokens.
-      * /basic should only accept Basic Authorization headers.
+
+   * /oauth should only accept OAuth Authorization access tokens.
+
+   * /basic should only accept Basic Authorization headers.
+
 
 • The response from Github should be some bit of information about a user, it can be their repos, name, followers, etc. There’s a wide range to choose from, we’re just looking for a successful response from Github. The response from Github doesn’t need to be manipulated in any way, just pass back to the user.
 
 • If the user sends in an invalid authorization, return a helpful error message. Avoid using the default error response from Apigee.
 
 • Include a small SoapUI project that can shows all the requirements have been met.
+
    – This project should include valid requests, as well as requests that fail (sending an invalid Basic Authorization header, etc.).
 
 • Answer the following question:
+
    – Basic Authorization is easily handled in the main flow, without the need for an additional proxy. Give one reason (there are many) OAuth tokens should not be granted in the main flow, assuming the user has sent in the correct credentials.
