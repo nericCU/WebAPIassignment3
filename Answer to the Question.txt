@@ -12,4 +12,4 @@ Assignment Three
 
 Basic Authorization is not as secured because it is handled in the main flow and an attacker could obtain the authorization token if they made the right requests and looked in the authorization header. 
 
-Keeping OAuth token authorization outside of the main flow and having the additional proxy makes OAuth more secure because then that proxy can be the only thing able to decrypt the access and refresh tokens. The user / attacker can only make requests to the main flow and not the additional proxy that handles OAuth access tokens. 
+Keeping OAuth token authorization outside of the main flow and having the additional proxy makes OAuth more secure because then that proxy can be the only thing able to decrypt the access and refresh tokens to the Resource Server. The user / attacker can only make requests to the main flow (Client) and not the additional proxy that handles OAuth access tokens to the Resource Server. 
